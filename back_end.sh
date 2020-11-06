@@ -1,13 +1,11 @@
 #!/bin/bash
 
-# ------------------------------------------------------------------------------ Back_end ---------------------------------------------------------------------------------------------------------
-
+# ------------------------------------------------------------------------------ Back_end ----------------------------------------------------------------------------------------------------------
 # Configuración del scritp
 # Definimos la contraseña de root como variable
 DB_ROOT_PASSWD=root
 DB_USU_PASSWD=usuario
 # ------------------------------------------------------------------------------ Instalación y configuración de MySQL ------------------------------------------------------------------------------ 
-
 # Habilitamos el modo de shell para mostrar los comandos que se ejecutan
 set -x
 # Actualizamos y actualizamos la lista de paquetes
@@ -28,7 +26,7 @@ cd /home/ubuntu
 rm -rf iaw-practica-lamp 
 git clone https://github.com/josejuansanchez/iaw-practica-lamp
 # Actualizamos la contraseña de root de MySQL
-mysql -u root  <<< "ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY '$DB_ROOT_PASSWD';"
+mysql -u root <<< "ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY '$DB_ROOT_PASSWD';"
 mysql -u root -p$DB_ROOT_PASSWD <<< "FLUSH PRIVILEGES;"
 
 # Creamos usuario para la aplicación web y asignamos privilegios
