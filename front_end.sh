@@ -32,7 +32,7 @@ git clone https://github.com/josejuansanchez/iaw-practica-lamp
 mv /var/www/html/iaw-practica-lamp/src/*  /var/www/html/
 
 # Configuramos el archivo php de la aplicacion
-sed -i 's/localhost/$IPPRIVADA/' /var/www/html/config.php
+sed -i "s/localhost/$IPPRIVADA/" /var/www/html/config.php
 
 # Eliminamos el archivo Index.html de apache
 rm -rf /var/www/html/index.html
