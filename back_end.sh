@@ -18,7 +18,7 @@ apt install mysql-server -y
 # mv mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
 
 # Editamos el archivo de configuración de MySQL, modificando la línea 
-sed -i 's/127.0.0.1/0.0.0.0/' /etc/mysql/mysql.conf.d/mysqld.cnf 
+sed -i "s/127.0.0.1/0.0.0.0/" /etc/mysql/mysql.conf.d/mysqld.cnf 
 # Reiniciamos el servicio
 sudo /etc/init.d/mysql restart
 # Clonamos el repositorio
@@ -34,5 +34,5 @@ mysql -u root -p$DB_ROOT_PASSWD <<< "FLUSH PRIVILEGES;"
 # mysql -u root -p$DB_ROOT_PASSWD <<< "GRANT ALL PRIVILEGES ON 'lamp_db'.* TO 'lamp_user'@'%';"
 # mysql -u root -p$DB_ROOT_PASSWD <<< "FLUSH PRIVILEGES;"
 
-# Introducimos la base de tados
+# Introducimos la base de tados de la aplicación web
 mysql -u root -p$DB_ROOT_PASSWD < /home/ubuntu/iaw-practica-lamp/db/database.sql

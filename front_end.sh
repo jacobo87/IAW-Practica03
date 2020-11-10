@@ -41,7 +41,10 @@ rm -rf /var/www/html/iaw-practica-lamp/
 # Cambiamos permisos 
 chown www-data:www-data * -R
 
-# ------------------------------------------------------------------------------ Inslación de herramientas adicionales ------------------------------------------------------------------------------ 
+# ------------------------------------------------------------------------------ Inslación de herramientas adicionales --------------------------------------------------------------------
+# Instalación de Phpmyadmin
+
+
 # Descargamos Adminer
 mkdir /var/www/html/adminer 
 cd /var/www/html/adminer 
@@ -67,3 +70,6 @@ systemctl restart apache2
 
 # Opcional, instalamos cliente MySQL
 # apt install mysql-client-core-8.0
+
+
+
