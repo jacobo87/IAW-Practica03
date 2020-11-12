@@ -66,17 +66,19 @@ apt install unzip -y
 # Instalación de Phpmyadmin
 cd /home/ubuntu
 rm -rf phpMyAdmin-5.0.4-all-lenguages.zip
-wget https://files.phpmyadmin.net/phpMyAdmin/5.0.4/phpMyAdmin-5.0.4-all-lenguages.zip
+wget https://files.phpmyadmin.net/phpMyAdmin/5.0.4/phpMyAdmin-5.0.4-all-languages.zip
 # Descomprimimos 
-nzip phpMyAdmin-5.0.4-all-lenguages.zip
+unzip phpMyAdmin-5.0.4-all-languages.zip
 # Borramos el archivo .zip
-rm -rf phpMyAdmin-5.0.4-all-lenguages.zip
+rm -rf phpMyAdmin-5.0.4-all-languages.zip
+rm -rf /var/www/html/phpmyadmin
 # Movemos la carpeta al directorio
-mv phpMyAdmin-5.0.4-all-lenguages /var/www/html/phpmyadmin
+mv phpMyAdmin-5.0.4-all-languages /var/www/html/phpmyadmin
 # Configuaramos el archivo config.sample.inc.php
-cd /var/www/html/phpmyadmin
-mv config.sample.inc.php config.inc.php
-sed -i "s/localhost/$IPPRIVADA/" /var/www/html/config.inc.php
+# cd /var/www/html/phpmyadmin/
+# sudo cp config.sample.inc.php config.inc.php
+# sudo sed -i "s/localhost/$IPPRIVADA/" /var/www/html/config.inc.php
+cp config.inc.php /var/www/html/phpmyadmin/
 
 # Cambiamos permisos de /var/www/html
 cd /var/www/html
