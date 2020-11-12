@@ -9,6 +9,7 @@ Contenido de la práctica 03 de IAW, instalación de Arquitectura de una aplicac
 - Scripts con la instalación de la **front-end** y **back-end** con sus respectivos pasos explicados.
 - Archivo de configuración para **apache 2.4**.
 - [Enlace repositorio con herramientas necesarias.][GitHub]
+- Archivo de configuración de php.
 
 
 
