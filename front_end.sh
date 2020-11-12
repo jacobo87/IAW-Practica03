@@ -68,16 +68,10 @@ cd /home/ubuntu
 rm -rf phpMyAdmin-5.0.4-all-lenguages.zip
 wget https://files.phpmyadmin.net/phpMyAdmin/5.0.4/phpMyAdmin-5.0.4-all-languages.zip
 # Descomprimimos 
-<<<<<<< HEAD
 unzip phpMyAdmin-5.0.4-all-languages.zip
 # Borramos el archivo .zip
 rm -rf phpMyAdmin-5.0.4-all-languages.zip
 rm -rf /var/www/html/phpmyadmin
-=======
-nzip phpMyAdmin-5.0.4-all-languages.zip
-# Borramos el archivo .zip
-rm -rf phpMyAdmin-5.0.4-all-languages.zip
->>>>>>> f115a671c1f20b9c985577120dd51ba0878295a2
 # Movemos la carpeta al directorio
 mv phpMyAdmin-5.0.4-all-languages /var/www/html/phpmyadmin
 # Configuaramos el archivo config.sample.inc.php
