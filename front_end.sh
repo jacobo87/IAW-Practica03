@@ -42,9 +42,6 @@ rm -rf /var/www/html/iaw-practica-lamp/
 chown www-data:www-data * -R
 
 # ------------------------------------------------------------------------------ Inslación de herramientas adicionales --------------------------------------------------------------------
-# Instalación de Phpmyadmin
-
-
 # Descargamos Adminer
 mkdir /var/www/html/adminer 
 cd /var/www/html/adminer 
@@ -63,6 +60,27 @@ mkdir /var/www/html/stats
 # Lazamos el proceso en segundo plano
 nohup goaccess /var/log/apache2/access.log -o /var/www/html/stats/index.html --log-format=COMBINED --real-time-html &
 htpasswd -c -b $HTTPASSWD_DIR/.htpasswd $HTTPASSWD_USER $HTTPASSWD_PASSWD
+
+# Instalamos unzip
+apt install unzip -y
+# Instalación de Phpmyadmin
+cd /home/ubuntu
+rm -rf phpMyAdmin-5.0.4-all-lenguages.zip
+wget https://files.phpmyadmin.net/phpMyAdmin/5.0.4/phpMyAdmin-5.0.4-all-lenguages.zip
+# Descomprimimos 
+nzip phpMyAdmin-5.0.4-all-lenguages.zip
+# Borramos el archivo .zip
+rm -rf phpMyAdmin-5.0.4-all-lenguages.zip
+# Movemos la carpeta al directorio
+mv phpMyAdmin-5.0.4-all-lenguages /var/www/html/phpmyadmin
+# Configuaramos el archivo config.sample.inc.php
+cd /var/www/html/phpmyadmin
+mv config.sample.inc.php config.inc.php
+sed -i "s/localhost/$IPPRIVADA/" /var/www/html/config.inc.php
+
+# Cambiamos permisos de /var/www/html
+cd /var/www/html
+chown www-data:www-data * -R
 
 # Copiamos el archivo de configuracion de apache
 cp /home/ubuntu/000-default.conf /etc/apache2/sites-available/
